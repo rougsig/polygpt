@@ -1,0 +1,44 @@
+{
+  "name": "root",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "tsx": "^4.17.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.1.0",
+    "knip": "^5.30.2",
+    "syncpack": "^13.0.0",
+    "typescript": "^5.5.4"
+  },
+  "syncpack": {
+    "versionGroups": [
+      {
+        "label": "Use workspace protocol when developing local packages",
+        "dependencies": [
+          "$LOCAL"
+        ],
+        "dependencyTypes": [
+          "!local"
+        ],
+        "pinVersion": "workspace:*"
+      }
+    ],
+    "sortFirst": [
+      "name",
+      "version",
+      "private",
+      "type",
+      "sideEffects",
+      "files",
+      "main",
+      "module",
+      "types",
+      "exports",
+      "dependencies",
+      "peerDependencies",
+      "devDependencies",
+      "scripts"
+    ]
+  }
+}

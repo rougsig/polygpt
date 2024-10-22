@@ -1,0 +1,23 @@
+{
+  "name": "@rougsig/polygpt",
+  "private": true,
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "src",
+    "dist"
+  ],
+  "devDependencies": {
+    "@workspace/tsconfig": "workspace:*",
+    "@workspace/vite": "workspace:*",
+    "vite": "^5.4.0",
+    "vitest": "^2.0.5"
+  },
+  "scripts": {
+    "bootstrap": "pnpm install --filter $(cat ./package.json | node-jq -r '.name')",
+    "build": "tsc && vite build",
+    "clean": "rimraf dist node_modules",
+    "test": "vitest",
+    "tsc": "tsc"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "@workspace/vite",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "dependencies": {},
+  "devDependencies": {
+    "@workspace/tsconfig": "workspace:*",
+    "@types/node": "^22.1.0",
+    "pkg-types": "^1.2.0",
+    "rollup-plugin-node-externals": "^7.1.3",
+    "ts-deepmerge": "^7.0.1",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.0",
+    "vite-plugin-dts": "^4.0.2",
+    "vite-tsconfig-paths": "^5.0.1",
+    "vitest": "^2.0.5"
+  },
+  "scripts": {
+    "bootstrap": "pnpm install --filter $(cat ./package.json | node-jq -r '.name')",
+    "build": "tsc && vite build --mode production",
+    "clean": "rimraf dist node_modules"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "extends": "@workspace/tsconfig",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "paths": {
+      "#/*": ["./src/*"],
+      "#/test/*": ["./src/__tests__/*"],
+
+      "#knex/*": ["./node_modules/@workspace/knex/src/*"],
+      "#workos-node/*": ["./node_modules/@workspace/workos-node/src/*"],
+      "#app-shared/*": ["./node_modules/@workspace/app-shared/src/*"],
+      "#runpod/*": ["./node_modules/@workspace/runpod/src/*"],
+      "#stdlib/*": ["./node_modules/@workspace/stdlib/src/*"],
+    }
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules",
+    "__tests__"
+  ]
+}
